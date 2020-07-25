@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.11.0/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="cardCenter">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center justify-content-center">
+                            <h1 class="font-weight-bold">DRF API Server</h1>
+                            <br>
+                            <button
+                                data-toggle="tooltip"
+                                data-placement="bottom"
+                                title="GET API를 요청합니다. 파라미터를 바꾸어서 테스트 해보세요!"
+                                onclick="location.href='/api/?sort_by=title&limit=10&page=10'">GET
+                            </button>
+                            <form action="/api/?title=MovieTitle&year=2020&rating=9.9&genre=Action&summary=MovieSummary" method="POST">
+                                {% csrf_token %}
+                                <button
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="POST API를 요청합니다. 다음 페이지에서 파라미터를 바꾸어서 테스트 해보세요!">POST
+                                </button>
+                            </form>
+                            <br>
+                            <button
+                                class="swaggerBtn"
+                                onclick="location.href='/api/swagger'">SWAGGER
+                            </button>
+                            <button
+                                onclick="location.href='/api/docs'">DOCS
+                            </button>
+                            <div class="description">
+                                <span>API문서는 </span><a href="https://github.com/ParkHyeonChae/DRF-API-Server" target="_blank">Github ReadMe</a><span>를 참고해주세요</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>

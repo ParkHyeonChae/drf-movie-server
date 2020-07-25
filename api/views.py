@@ -1,11 +1,13 @@
 """api/views.py"""
 
+from django.shortcuts import render
 from .models import MovieList as MovieListModel
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import JsonResponse
 from .serializers import MovieListSerializer
+
 
 class MovieList(APIView):
     """A function, able to get list of MovieList
@@ -110,3 +112,7 @@ class MovieList(APIView):
         queryset = MovieListModel.objects.filter(genre__icontains=genre).order_by(sort_by)[start:last]
         serializer = MovieListSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+def index(request):
+    return render(request, 'api/index.html')

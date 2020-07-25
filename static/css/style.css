@@ -1,0 +1,59 @@
+body {
+    background-color: rgb(235, 221, 221);
+}
+
+.cardCenter {
+    position: absolute;
+    top: 30%;
+}
+
+button {
+    background: #d14040f2;;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    width: 165px;
+    height: 40px;
+    font-size: 1.1em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+  }
+  
+  button:hover {
+    background: #940c0cf2;
+  }
+  
+  button:focus {
+    outline : none;
+  }
+
+form {
+    float : right;
+    margin-left: 10px;
+}
+
+span {
+    color:rgb(139, 139, 139);
+}
+
+a {
+    color:rgb(94, 93, 93);
+    font-weight: 500;
+}
+
+  a:hover {
+    color:rgb(63, 63, 63);
+  }
+
+.description {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.swaggerBtn {
+  margin-right: 6px;
+  margin-top: 10px;
+}
