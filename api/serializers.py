@@ -8,4 +8,4 @@ from .models import MovieList
 class MovieListSerializer(serializers.ModelSerializer):
     class Meta:
         model = MovieList
-        fields = '__all__'
+        fields = ['title', 'year', 'rating', 'genre', 'summary']
